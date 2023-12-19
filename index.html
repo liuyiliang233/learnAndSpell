@@ -20,7 +20,7 @@
 
 <body>
     <ul class="nav">
-        <li class="nav-item" id="list_show">list</li>
+        <li class="nav-item" id="list_show">Setting</li>
         <li class="nav-item" id="mode_b" title="点击切换拼写或背词">背词</li>
         <select id="dropdown" title="词书切换"></select>
         <input type="range" name="间距" id="spacing" min="0" max="1" step="0.05" title="音节分词间距">
@@ -29,7 +29,7 @@
     </ul>
 
     <div id="List" tabindex="0">
-        <li class="nav-item" id="list_disappear">list</li>
+        <li class="nav-item" id="list_disappear">Setting</li>
         <form id="control">
             <label><input type="checkbox" id="list">列表模式</label>
             <label><input type="checkbox" id="playC">发音</label>
@@ -78,9 +78,9 @@
     <template id="word_card">
         <div id="word_bar">
             <div id="tags"></div>
-            <button id="play_b"></button>
-            <button id="other_b"></button>
-            <button id="spell_b"></button>
+            <button id="play_b">🎵</button>
+            <button id="other_b">🔍</button>
+            <button id="spell_b">拼</button>
         </div>
         <div id="word-main">
             <div id="word"></div>
