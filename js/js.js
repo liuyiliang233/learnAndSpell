@@ -558,7 +558,7 @@ function answer(el, w, p, t) {
 }
 function play(word) {
     let audio = document.getElementById("audio");
-    audio.src = "https://dict.youdao.com/dictvoice?le=eng&type=0&audio=" + word;
+    if (audio.src !== `https://dict.youdao.com/dictvoice?le=eng&type=0&audio=${word}`) audio.src = "https://dict.youdao.com/dictvoice?le=eng&type=0&audio=" + word;
     audio.play();
 }
 // 释义编排
