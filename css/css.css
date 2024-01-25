@@ -151,6 +151,7 @@ word-card #word_bar {
     display: flex;
     justify-content: right;
     margin-top: 16px;
+    user-select: none;
 }
 
 word-card #el {
@@ -187,7 +188,6 @@ word-card #tags {
     overflow: hidden;
     display: flex;
     align-items: center;
-    user-select: none;
 }
 
 word-card #tags > div {
@@ -210,6 +210,10 @@ word-card #tags > div > button {
 word-card #tags > input {
     margin: 0;
     background-color: #0000;
+}
+
+word-card #tags > #play-b {
+    cursor: pointer;
 }
 
 word-card :is(#n, #s)::-webkit-slider-thumb {

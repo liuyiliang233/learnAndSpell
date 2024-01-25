@@ -50,8 +50,12 @@ function save() {
     if (db) db_put();
 }
 window.onbeforeunload = () => {
-    save();
+    save(); 
 };
+window.addEventListener('beforeunload', (e) => {
+    save(); 
+    e.preventDefault();  
+})
 setInterval(save, 5 * 60 * 1000);
 
 /**上传数据库 */

@@ -48,7 +48,8 @@ function save() {
     if (db)
         db_put();
 }
-window.onbeforeunload = () => {
+window.onbeforeunload = (event) => {
+    event.preventDefault();
     save();
 };
 setInterval(save, 5 * 60 * 1000);
@@ -363,6 +364,7 @@ function change_b_list() {
     // 渲染完成
     book_words_l = map[dropdownValue].map((v) => dic[v][0]);
     sum();
+    document.getElementById("main").scrollTop = 0;
     big_list(document.getElementById("list").checked);
 }
 var book_words_l = [];
