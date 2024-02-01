@@ -560,7 +560,8 @@ function answer(el, w, p, t) {
 }
 function play(word) {
     let audio = document.getElementById("audio");
-    if (audio.src !== `https://dict.youdao.com/dictvoice?le=eng&type=0&audio=${word}`) audio.src = "https://dict.youdao.com/dictvoice?le=eng&type=0&audio=" + word;
+    // type 2:美式英语，1:英式发音
+    if (audio.src !== `https://dict.youdao.com/dictvoice?le=eng&type=1&audio=${word}`) audio.src = "https://dict.youdao.com/dictvoice?le=eng&type=1&audio=" + word;
     audio.play();
 }
 // 释义编排
