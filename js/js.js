@@ -628,21 +628,25 @@ document.getElementById("spacing").oninput = () => {
     document.documentElement.style.setProperty("--spacing", `${document.getElementById("spacing").value}em`);
 };
 function sum() {
-    var 知道的词数 = 0;
-    var 知道次数 = 0;
-    var 拼写词数 = 0;
-    var 拼写次数 = 0;
+    /** 知道的词数 */
+    var knowWordNum = 0;
+    /** 知道次数 */
+    var knowNum = 0;
+    /** 拼写词数 */
+    var spellWordNum = 0;
+    /** 拼写次数 */
+    var spellNum = 0;
     Object.keys(store.word_value).map((v) => {
         if (book_words_l.includes(v)) {
-            if (store.word_value[v]?.k?.v)
-                知道的词数++;
-            知道次数 += store.word_value[v]?.k?.v || 0;
-            if (store.word_value[v]?.s?.v)
-                拼写词数++;
-            拼写次数 += store.word_value[v]?.s?.v || 0;
+            console.log(111, store.word_value, store.word_value[v]);
+            if (store.word_value[v]?.k?.v) knowWordNum++;
+            knowNum += store.word_value[v]?.k?.v || 0;
+            if (store.word_value[v]?.s?.v) spellWordNum++;
+            spellNum += store.word_value[v]?.s?.v || 0;
         }
     });
-    document.getElementById("sum").innerText = `(${知道的词数},${知道次数})(${拼写词数},${拼写次数}) /${map[dropdownValue].length}`;
+    document.getElementById("sum").innerText = `知道的：${knowWordNum}, ${knowNum} 拼写的：${spellWordNum}, ${spellNum} [总 ${map[dropdownValue].length}]`;
+    document.getElementById("sum").style.fontSize = '10px';
     rander_chart();
 }
 function sum_all() {
