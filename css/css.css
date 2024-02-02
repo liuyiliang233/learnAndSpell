@@ -130,14 +130,21 @@ body {
 #main > div {
     scroll-snap-align: center;
     height: var(--main-div-height);
+    position: relative;
 }
 word-card {
     display: grid;
     grid-template-columns: var(--not-spell);
     grid-template-rows: auto 1fr;
     height: 100%;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+    filter: blur(2px);
 }
-
+word-card:hover {
+    opacity: 1;
+    filter: blur(0);
+}
 word-card:focus {
     outline: 1px dashed;
 }
